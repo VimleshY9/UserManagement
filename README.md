@@ -17,4 +17,10 @@ It has APIs for signin, singup, to get userinfo, setroles
     "email":"vimleshgmail.com",
     "password":"12345"
 }
-response => username and token in hearder 
+response => username and token in harder 
+
+
+3. user can validate the session
+4. session are also handled
+5. logout api is included
+6. using decreapt algo for password and implemented the matcher as well
