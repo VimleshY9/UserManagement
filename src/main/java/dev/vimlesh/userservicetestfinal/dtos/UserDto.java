@@ -12,6 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class UserDto {
+    private Long id;
     private String email;
     private Set<Role> roles = new HashSet<>();
 
@@ -19,7 +20,7 @@ public class UserDto {
         UserDto userDto = new UserDto();
         userDto.setEmail(user.getEmail());
         userDto.setRoles(user.getRoles());
-
+        userDto.id = user.getId();
         return userDto;
     }
 }

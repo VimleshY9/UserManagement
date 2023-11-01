@@ -32,16 +32,11 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<UserDto> signUp(@RequestBody SignUpRequestDto request) {
-        UserDto userDto = authService.signUp(request.getEmail(), request.getPassword());
-        return new ResponseEntity<>(userDto, HttpStatus.OK);
+    public ResponseEntity<SignUpResponseDto> signUp(@RequestBody SignUpRequestDto request) {
+        SignUpResponseDto signUpResponseDto = authService.signUp(request.getUserName(), request.getEmail(), request.getPassword());
+        return new ResponseEntity<>(signUpResponseDto, HttpStatus.OK);
     }
 
-//    @GetMapping("/signup")
-//    public String signUp() {
-////        UserDto userDto = authService.signUp(request.getEmail(), request.getPassword());
-//        return "hello";
-//    }
 
     @PostMapping("/validate")
     public ResponseEntity<SessionStatus> validateToken(ValidateTokenRequestDto request) {
